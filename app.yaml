@@ -1,0 +1,12 @@
+
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: Inventory_VBeta/pages/index.php
+  upload: Inventory_VBeta/pages/index.php
+
+- url: /
+  static_dir: Inventory_VBeta
