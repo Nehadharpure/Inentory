@@ -3,14 +3,12 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 //error_reporting(0);
-$servername = "10.140.0.2";
-$username = "root";
-$password = "root123";
-$dbname = "inventory";
-
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
-
+$dsn = getenv('MYSQL_DSN');
+$user = getenv('MYSQL_USER');
+$password = getenv('MYSQL_PASSWORD');
+  
+$connC = new PDO($dsn, $user, $password);
+$connC->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 ///////////////login//////////////
 function getCompanyDetails($username,$password)
